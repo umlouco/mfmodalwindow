@@ -3,31 +3,25 @@ body.mf-modal-open {
     overflow: hidden;
 }
 
+/* ── Modal overlay: ensure BS5 scroll behavior ───────────── */
+[data-mfmodal-root].modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: var(--bs-modal-zindex, 1055);
+    outline: 0;
+}
+
 /* ── Backdrop: skip fade, show immediately ────────────────── */
 .mf-modal-backdrop {
     opacity: var(--bs-backdrop-opacity, 0.5);
 }
 
-/* ── Trigger button (link style) ─────────────────────────── */
-.mf-modal-trigger {
-    border: 0;
-    background: transparent;
-    padding: 0;
-    color: var(--bs-link-color, #0d6efd);
-    text-decoration: underline;
-    font: inherit;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-}
-
-.mf-modal-trigger:hover,
-.mf-modal-trigger:focus {
-    color: var(--bs-link-hover-color, #0a58ca);
-    text-decoration: underline;
-}
-
-/* ── btn-link trigger: override Neve theme .btn styles ───── */
+/* ── Default trigger: btn btn-link override for Neve ─────── */
 button.btn.btn-link[data-mfmodal-open] {
     background: transparent;
     color: var(--bs-link-color, #0d6efd);
@@ -45,8 +39,8 @@ button.btn.btn-link[data-mfmodal-open]:focus {
     text-decoration: underline;
 }
 
-/* ── Non-btn-close close control inside modal header ─────── */
-.modal-header [data-mfmodal-close]:not(.btn-close) {
+/* ── Default close: plain × symbol, no background ────────── */
+.mf-modal-close {
     background: transparent;
     border: 0;
     padding: 0.25rem 0.5rem;
@@ -54,16 +48,18 @@ button.btn.btn-link[data-mfmodal-open]:focus {
     line-height: 1;
     color: var(--bs-body-color, #212529);
     opacity: 0.5;
+    cursor: pointer;
     text-decoration: none;
 }
 
-.modal-header [data-mfmodal-close]:not(.btn-close):hover,
-.modal-header [data-mfmodal-close]:not(.btn-close):focus {
-    opacity: 0.75;
+.mf-modal-close:hover,
+.mf-modal-close:focus {
+    opacity: 1;
     text-decoration: none;
 }
 
-.modal-header [data-mfmodal-close] .screen-reader-text {
+/* ── Screen reader text ──────────────────────────────────── */
+[data-mfmodal-close] .screen-reader-text {
     position: absolute;
     width: 1px;
     height: 1px;
