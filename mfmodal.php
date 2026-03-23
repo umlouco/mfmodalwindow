@@ -15,7 +15,7 @@
  * Domain Path:       /mfmodal
  */
 
-define('MFMODAL_VERSION', '1.2.1');
+define('MFMODAL_VERSION', '1.2.2');
 
 add_action('wp_enqueue_scripts', 'mf_modal_enqueue');
 

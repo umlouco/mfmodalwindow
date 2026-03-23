@@ -3,7 +3,7 @@
 </button>
 
 <div class="modal fade" id="m<?php echo esc_attr($modalid); ?>" data-mfmodal-root tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="<?php echo ! empty($param['title']) ? esc_attr($titleid) : ''; ?>" aria-hidden="true">
-  <div class="modal-dialog <?php echo esc_attr($param['modal_width']); ?>" role="document">
+  <div class="modal-dialog modal-dialog-scrollable <?php echo esc_attr($param['modal_width']); ?>" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <?php if (! empty($param['title'])) : ?>
