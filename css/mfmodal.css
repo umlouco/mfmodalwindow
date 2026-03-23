@@ -44,6 +44,7 @@ button.btn.btn-link[data-mfmodal-open]:focus {
     background: transparent;
     border: 0;
     padding: 0.25rem 0.5rem;
+    margin-left: auto;
     font-size: 1.5rem;
     line-height: 1;
     color: var(--bs-body-color, #212529);
