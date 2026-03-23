@@ -4,7 +4,7 @@
  * Plugin Name:       MF Modal Button
  * Plugin URI:        https://www.mario-flores.com/
  * Description:       Add a button to open a modal window
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 5.2
  * Requires PHP:      5.6
  * Author:            Mario Flores
@@ -14,6 +14,8 @@
  * Text Domain:       mf_model
  * Domain Path:       /mfmodal
  */
+
+define('MFMODAL_VERSION', '1.1.0');
 
 add_action('wp_enqueue_scripts', 'mf_modal_enqueue');
 
@@ -27,19 +29,19 @@ function mf_modal_enqueue()
         'mfmodal',
         plugins_url('/css/mfmodal.css', __FILE__),
         array('bootstrap'),
-        '1.0.1'
+        MFMODAL_VERSION
     );
     wp_enqueue_script(
         'bootstrap',
         plugins_url('/js/bootstrap.min.js', __FILE__),
         array('jquery'),
-        '5.0.2',
+        MFMODAL_VERSION,
         true
     );
 }
 
 add_shortcode('mf_modal', 'mfmodal');
-function mfmodal($attr, $content)
+function mfmodal($attr = array(), $content = null)
 {
     $param = shortcode_atts(
         array(
@@ -59,7 +61,7 @@ function mfmodal($attr, $content)
 }
 
 add_shortcode('mf_modal_iframe', 'mfmodaliframe');
-function mfmodaliframe($attr)
+function mfmodaliframe($attr = array())
 {
     $param = shortcode_atts(
         array(
