@@ -4,7 +4,7 @@
  * Plugin Name:       MF Modal Button
  * Plugin URI:        https://www.mario-flores.com/
  * Description:       Add a button to open a modal window
- * Version:           1.2.0
+ * Version:           1.2.2
  * Requires at least: 5.2
  * Requires PHP:      5.6
  * Author:            Mario Flores
