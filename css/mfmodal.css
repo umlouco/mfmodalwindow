@@ -1,53 +1,80 @@
-.modal {
-    z-index: 1055;
+/* ── Scroll lock ─────────────────────────────────────────── */
+body.mf-modal-open {
+    overflow: hidden;
 }
 
-.modal-backdrop {
-    z-index: 1050;
+/* ── Backdrop: skip fade, show immediately ────────────────── */
+.mf-modal-backdrop {
+    opacity: var(--bs-backdrop-opacity, 0.5);
 }
 
-.modal.show .modal-dialog {
-    z-index: 1056;
-}
-
-.mf-modal-trigger,
-.mf-modal-close {
+/* ── Trigger button (link style) ─────────────────────────── */
+.mf-modal-trigger {
     border: 0;
     background: transparent;
     padding: 0;
     color: var(--bs-link-color, #0d6efd);
     text-decoration: underline;
     font: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
 }
 
 .mf-modal-trigger:hover,
-.mf-modal-trigger:focus,
-.mf-modal-close:hover,
-.mf-modal-close:focus {
+.mf-modal-trigger:focus {
     color: var(--bs-link-hover-color, #0a58ca);
     text-decoration: underline;
 }
 
-.mf-modal-close {
+/* ── btn-link trigger: override Neve theme .btn styles ───── */
+button.btn.btn-link[data-mfmodal-open] {
+    background: transparent;
+    color: var(--bs-link-color, #0d6efd);
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    font-weight: inherit;
+    text-decoration: underline;
+}
+
+button.btn.btn-link[data-mfmodal-open]:hover,
+button.btn.btn-link[data-mfmodal-open]:focus {
+    background: transparent;
+    color: var(--bs-link-hover-color, #0a58ca);
+    text-decoration: underline;
+}
+
+/* ── Non-btn-close close control inside modal header ─────── */
+.modal-header [data-mfmodal-close]:not(.btn-close) {
+    background: transparent;
+    border: 0;
+    padding: 0.25rem 0.5rem;
     font-size: 1.5rem;
     line-height: 1;
+    color: var(--bs-body-color, #212529);
+    opacity: 0.5;
     text-decoration: none;
 }
 
-.mf-modal-close:hover,
-.mf-modal-close:focus {
+.modal-header [data-mfmodal-close]:not(.btn-close):hover,
+.modal-header [data-mfmodal-close]:not(.btn-close):focus {
+    opacity: 0.75;
     text-decoration: none;
 }
 
-.mf-modal-header {
-    align-items: center;
+.modal-header [data-mfmodal-close] .screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-.mf-modal-title {
-    margin: 0;
-}
-
-.mf-modal-body iframe {
+/* ── Iframe inside modal body ────────────────────────────── */
+.modal-body iframe {
     display: block;
     width: 100%;
     min-height: 500px;

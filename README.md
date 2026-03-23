@@ -1,21 +1,21 @@
 # MF Modal Button
 
-MF Modal Button is a lightweight WordPress plugin that provides shortcodes for opening content inside a Bootstrap modal window.
+MF Modal Button is a lightweight WordPress plugin that provides shortcodes for opening content inside a modal window.
 
 It supports two use cases:
 
 - Rendering inline WordPress content inside a modal
 - Loading an external page inside an iframe modal
 
-The plugin bundles Bootstrap 5 assets and renders modal markup compatible with Bootstrap 5.
+The plugin uses Bootstrap styling for layout and ships its own vanilla JavaScript modal controller, so it does not require jQuery.
 
 ## Included assets
 
 The plugin enqueues:
 
 - `css/bootstrap.min.css`
-- `js/bootstrap.min.js`
 - `css/mfmodal.css`
+- `js/mfmodal.js`
 
 The custom stylesheet adds:
 
@@ -47,7 +47,7 @@ Supported attributes:
 
 Behavior:
 
-- The trigger opens a Bootstrap modal using `data-bs-toggle` and `data-bs-target`
+- The trigger opens the modal using the plugin's vanilla JavaScript controller
 - If `title` is set, the plugin renders an `h4` in the modal header
 - The close control displays only the `×` symbol by default
 - Nested shortcodes inside the modal body are processed with `do_shortcode()`
@@ -106,6 +106,6 @@ Content here.
 
 ## Notes
 
-- The plugin expects Bootstrap 5 modal behavior
+- The plugin does not require jQuery for modal interaction
 - The modal header title is optional
 - The plugin generates unique modal IDs automatically unless `modalid` is passed to `mf_modal_iframe`
