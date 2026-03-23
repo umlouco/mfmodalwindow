@@ -1,0 +1,55 @@
+.modal {
+    z-index: 1055;
+}
+
+.modal-backdrop {
+    z-index: 1050;
+}
+
+.modal.show .modal-dialog {
+    z-index: 1056;
+}
+
+.mf-modal-trigger,
+.mf-modal-close {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: var(--bs-link-color, #0d6efd);
+    text-decoration: underline;
+    font: inherit;
+}
+
+.mf-modal-trigger:hover,
+.mf-modal-trigger:focus,
+.mf-modal-close:hover,
+.mf-modal-close:focus {
+    color: var(--bs-link-hover-color, #0a58ca);
+    text-decoration: underline;
+}
+
+.mf-modal-close {
+    font-size: 1.5rem;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.mf-modal-close:hover,
+.mf-modal-close:focus {
+    text-decoration: none;
+}
+
+.mf-modal-header {
+    align-items: center;
+}
+
+.mf-modal-title {
+    margin: 0;
+}
+
+.mf-modal-body iframe {
+    display: block;
+    width: 100%;
+    min-height: 500px;
+    border: 0;
+}
